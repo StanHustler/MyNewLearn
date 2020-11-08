@@ -21,7 +21,6 @@
   <component name="ChangeListManager">
     <list default="true" id="f6d90bb1-a5b8-458c-b9a2-9be2ce25c253" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Vue/HelloWorld.html" beforeDir="false" afterPath="$PROJECT_DIR$/Vue/HelloWorld.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,7 +51,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="reference.settings.ide.settings.web.browsers" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
@@ -71,7 +70,7 @@
       <workItem from="1604677152822" duration="594000" />
       <workItem from="1604755049482" duration="239000" />
       <workItem from="1604755342474" duration="2381000" />
-      <workItem from="1604801268445" duration="827000" />
+      <workItem from="1604801268445" duration="4209000" />
     </task>
     <servers />
   </component>
@@ -89,5 +88,11 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="461" y="169" key="SettingsEditor" timestamp="1604802806106">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="461" y="169" key="SettingsEditor/0.0.1920.1050@0.0.1920.1050" timestamp="1604802806106" />
   </component>
 </project>
