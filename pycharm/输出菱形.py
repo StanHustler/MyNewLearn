@@ -10,17 +10,24 @@ Desc    :
 
 
 n = eval(input())
-for i in range(1,n+1):
-    for j in range(n-i):
-        print(' ',end='')
-    for j in range(2*i-1):
-        print('*',end='')
-    print()
-m=2*n-1
-for i in range(1,n):
-    for j in range(i):
-        print(' ',end='')
-    m-=2
-    for j in range(m):
-        print('*',end ='')
+# for i in range(1,n+1):
+#     for j in range(n-i):
+#         print(' ',end='')
+#     for j in range(2*i-1):
+#         print('*',end='')
+#     print()
+# m=2*n-1
+# for i in range(1,n):
+#     for j in range(i):
+#         print(' ',end='')
+#     m-=2
+#     for j in range(m):
+#         print('*',end ='')
+#     print()
+
+    # 欧氏距离法
+for i in range(1,2*n):
+    for j in range(1,2*n):
+        d=abs(i-n)+abs(j-n)
+        print('*'if d<n else ' ',end='')
     print()
