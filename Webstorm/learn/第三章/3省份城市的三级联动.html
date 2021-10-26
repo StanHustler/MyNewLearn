@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>2021037100</title>
+</head>
+<body>
+
+<select id="province">
+    <option value="-1">请选择</option>
+</select>
+<select id="city"></select>
+<select id="country"></select>
+
+<script type="text/javascript">
+    // 省份信息数组
+    var provinceArr = ['上海市', '江苏省', '浙江省'];
+    // 城市信息数组
+    var cityArr = [
+        ['上海市'],
+        ['苏州市', '南京市', '扬州市'],
+        ['石家庄', '秦皇岛', '张家口']
+    ];
+    // 区域信息数组
+    var countryArr = [
+        [
+            ['黄浦区', '静安区', '长宁区', '浦东区']
+        ],
+        [
+            ['虎丘区', '吴中区', '相城区', '姑苏区', '吴江区'],
+            ['玄武区', '秦淮区', '建邺区', '鼓楼区', '浦口区'],
+            ['邗江区', '广陵区', '江都区']
+        ],
+        [
+            ['长安区', '桥西区', '新华区', '井陉矿区'],
+            ['海港区', '山海关区', '北戴河区', '抚宁区'],
+            ['桥东区', '桥西区', '宣化区', '下花园区']
+        ]
+    ];
+
+    var province = document.getElementById('province');
+    var city = document.getElementById('city');
+    var country = document.getElementById('country');
+
+    function createOption(obj, data) {
+        for (var i in data) {
+            var op = new Option(data[i], i); // 创建下拉列表中的option选项
+            obj.options.add(op); // 将选项添加到下拉列表中
+        }
+    }
+
+    createOption(province,provinceArr)
+
+    province.onchange = function (){
+        city.options.length=0
+        createOption(city,cityArr[province.value])
+    }
+
+    city.onchange = function (){
+        country.options.length=0
+        createOption(country,countryArr[province.value][city.value])
+    }
+</script>
+
+</body>
+</html>

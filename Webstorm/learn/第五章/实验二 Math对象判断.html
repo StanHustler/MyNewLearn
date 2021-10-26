@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>2021037100</title>
+</head>
+<body>
+<script type="text/javascript">
+    var min=parseInt(prompt("请输入最小值"));
+    var max=parseInt(prompt("请输入最大值"));
+
+    if(isNaN(min)||isNaN(max)){
+        alert("请输入数字");
+    }else {
+        document.write(min+ "-" +max+ "范围内的随机整数是：" + Math.floor(Math.random()*(max-min+1)+min));
+    }
+
+</script>
+</body>
+</html>

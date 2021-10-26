@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>2021037100</title>
+</head>
+<body>
+<script type="text/javascript">
+    var arr=[10,2,5,27,98,31];
+    document.write('数组是：'+arr+'<br/>');
+    for(var i=1;i<arr.length;i++){                  // 外循环控制比较轮数
+        for(var j=0;j<arr.length-i;j++){            // 内循环控制比较元素
+            if(arr[j]>arr[j+1]){                    // 如果前元素大于后元素
+                var temp=arr[j];                    //交换两者位置
+                arr[j]=arr[j+1];
+                arr[j+1]=temp;
+            }
+
+        }
+
+    }
+    document.write('排序后的数组是：'+arr+'<br/>');
+
+</script>
+</body>
+</html>

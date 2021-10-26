@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>2021037100</title>
+</head>
+<body>
+  <script type="text/javascript">
+      var arr = [65,97,5,1,145,23]
+      function Search(item){
+          arr.indexOf(item)
+          if(arr.indexOf(item) ===-1){
+              document.write("数组中未找到该元素")
+          }else {
+              document.write("元素"+item+"在数组中的位置索引是："+arr.indexOf(item))
+          }
+      }
+
+      document.write("原数组：" + arr + "<br>")
+
+      Search(parseInt(prompt("请输入要查找的值")))
+
+  </script>
+</body>
+</html>

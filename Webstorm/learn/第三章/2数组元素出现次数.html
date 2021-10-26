@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>2021037100</title>
+</head>
+<body>
+
+<script type="text/javascript">
+    var arr = ['a','b','d','d','c','d','d']
+    var xiabiao = []
+    var k = 0
+
+    for(var i in arr){
+        if (arr[i] == 'd'){
+            xiabiao[k]=i
+            k+=1
+        }
+    }
+    document.write("arr中元素出现的次数："+ k + ";<br>" + "对应元素的所有下标：" + xiabiao)
+
+
+</script>
+
+</body>
+</html>

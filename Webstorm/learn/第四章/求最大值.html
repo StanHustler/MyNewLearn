@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>2021037100</title>
+</head>
+<body>
+    <script type="text/javascript">
+        var arr = [65,97,5,1,145,23]
+        function Max(x) {
+            for (var i = 1; i < x.length; i++) {
+                for (var j = i; j > 0; j--) {
+                    if (x[j - 1] < x[j]) {
+                        [x[j - 1], x[j]] = [x[j], x[j - 1]]
+                    }
+                }
+            }
+            return x[0]
+        }
+
+        document.write("原数组："+ arr + "<br>")
+        document.write("其中最大元素为："+ Max(arr))
+    </script>
+
+</body>
+</html>

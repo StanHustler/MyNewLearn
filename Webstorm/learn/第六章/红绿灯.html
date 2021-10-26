@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>2021037100</title>
+    <style>
+        /* 居中盒子 */
+
+        .box {
+            width: 300px;
+            height: 60px;
+            padding: 22px 30px;
+            border: 50px solid #ccc;
+            margin: 0 auto;
+            margin-top: 100px;
+            border-radius: 80px;
+        }
+        /* 红绿灯样式 */
+
+        .box div {
+            margin-left: 10px;
+            float: left;
+            width: 50px;
+            height: 50px;
+            border-radius: 50px;
+            border: 2px solid #333;
+            color: rgba(0, 0, 0, 0.4);
+            text-align: center;
+            font-size: 24px;
+            line-height: 50px;
+        }
+        /* js需要的类名 */
+
+        .gray {
+            background-color: #eee;
+        }
+
+        .red {
+            background-color: rgb(240, 0, 0);
+        }
+
+        .yellow {
+            background-color: yellow;
+        }
+
+        .green {
+            background-color: #26ff00;
+        }
+        /* 倒计时样式 */
+
+        .box .count {
+            width: 50px;
+            color: #666;
+            font-size: 280%;
+            line-height: 50px;
+            padding-top: 5px;
+            margin-left: 15px;
+            border: 0;
+        }
+    </style>
+</head>
+<body>
+<div class="box">
+    <!-- 红灯 -->
+    <div id="red"></div>
+    <!-- 黄灯 -->
+    <div id="yellow"></div>
+    <!--绿灯  -->
+    <div id="green"></div>
+    <!-- 倒计时 -->
+    <div id="count" class="count">00</div>
+</div>
+<script>
+    // 页面加载完成加载
+    window.onload = function() {
+        var lamp = {
+            // 红灯相关信息
+            red: {
+                obj: document.getElementById("red"),
+                timeout: 7,
+                style: ['red', "gary", 'gary'],
+                next: 'green'
+            },
+            // 黄灯相关信息
+            yellow: {
+                obj: document.getElementById("yellow"),
+                timeout: 15,
+                style: ['gary', "yellow", 'gary'],
+                next: 'red'
+            },
+            // 绿灯相关信息
+            green: {
+                obj: document.getElementById("green"),
+                timeout: 20,
+                style: ['gary', "gary", 'green'],
+                next: 'yellow'
+            },
+            // 设置背景颜色
+            changeStyle(style) {
+                lamp.red.obj.className = style[0];
+                lamp.yellow.obj.className = style[1];
+                lamp.green.obj.className = style[2];
+            }
+
+        }
+
+        var count = {
+            // 获取倒计时元素对象
+            obj: document.getElementById("count"),
+            change: function(num) {
+                this.obj.innerHTML = (num < 10) ? ("0" + num) : num;
+            }
+        };
+        // 获取绿灯相关信息
+        var now = lamp.green;
+        // 获取剩余时间
+        var timeout = now.timeout;
+        // 背景样式
+        lamp.changeStyle(now.style);
+        // 设置绿灯剩余时间
+        count.change(timeout);
+        setInterval(function() {
+            // 剩余时间写入相应信号灯
+            now.obj.innerHTML = timeout - 1 < 10 ? "0" + (timeout - 1) : timeout - 1;
+            // 切换信号灯
+            if (--timeout <= 0) {
+                //    清空不量的信号灯中的时间
+                now.obj.innerHTML = "";
+                // 获取下一个信号灯的数据
+                now = lamp[now.next];
+                // 获取剩余时间
+                timeout = [now.timeout];
+                // 设置信号灯背景颜色
+                lamp.changeStyle(now.style);
+            }
+            // 设置灯亮的剩余时间
+            count.change(timeout);
+        }, 1000)
+    }
+</script>
+</body>
+</html>

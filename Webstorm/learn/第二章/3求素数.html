@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>2021037100</title>
+</head>
+<body>
+
+    <script type="text/javascript">
+        document.write("100以内的素数有:"+ "</br>" + "1 ")
+        for (var i =2;i<100;i++){
+
+            for (var j=2;j<i;j++){
+                if(i%j==0){
+                    break;
+                }
+            }
+            if (i==j){
+                document.write(i)
+                document.write(" ")
+            }
+
+        }
+    </script>
+</body>
+</html>

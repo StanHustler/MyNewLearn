@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>2021037100</title>
+</head>
+<body>
+
+<script type="text/javascript">
+    function Book(name,type,price,publishing){
+        this.name=name;
+        this.type=type;
+        this.price=price;
+        this.publishing=publishing;
+    }
+    var book=new Book("JavaScript从入门到精通","JavaScript",60,"清华大学出版社");
+    for (var i in book){
+        document.write("属性名:"+i+"属性值:"+book[i]+'<br>');
+    }
+</script>
+
+</body>
+</html>

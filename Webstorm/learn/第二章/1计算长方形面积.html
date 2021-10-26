@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>2021037100</title>
+</head>
+<body>
+
+<p>长方形的长：<input type="text" id="long"></p>
+<p>长方形的宽：<input type="text" id="width"></p>
+<p>长方形的周长：<input type="text" id="girth"></p>
+<p>长方形的面积：<input type="text" id="area"></p>
+
+<script type="text/javascript">
+    var x=prompt("请输入长方形的长")
+    var y=prompt("请输入长方形的宽")
+
+    x=parseFloat(x)&&Number(x); //parseFloat剔出数字 并 纯数字，错误nun
+    y=parseFloat(y)&&Number(y);
+
+    if(!isNaN(x) && !isNaN(y)){
+        document.getElementById('long').value=x;
+        document.getElementById('width').value=y;
+        document.getElementById('girth').value=2*x+2*y;
+        document.getElementById('area').value=x*y;
+    }else{
+        alert('请输入正确的数字');
+    }
+</script>
+
+</body>
+</html>
