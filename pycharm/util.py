@@ -1,8 +1,6 @@
 a,b=map(eval,input().split())
 
-ls=[]
-for i in range(eval(input())):
-    ls.append(eval(input()))
+ls = [eval(input()) for i in range(2)]
 
 n = int(input())
 matrix = [[eval(j) for j in input().split()] for i in range(n)]
@@ -47,6 +45,13 @@ def Fibonacci(max:int):
     while b <= max:
         a, b = b, a + b
         print(b,end=" ")
+        
+def fib(n:int)->int:
+    if n==1 or n==2:return n;
+    a,b=1,1
+    for i in range(n-2):
+        a, b = b, a + b
+    return b
 
 def gcd(a:int,b:int)->int:
     return a if b==0 else gcd(b,a%b)
@@ -62,5 +67,19 @@ def josephus(num:int,gap:int)->int:
         del ls[index]
     return ls[0]
 
+def baseConvert(decimal: int, base: int) -> str:
+    a = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 'A', 'b', 'C', 'D', 'E', 'F']
+    s = decimal // base
+    y = decimal % base
+    if s == 0:
+        return str(y)
+    else:
+        return str(baseConvert(s, base)) + str(a[y])
 
-
+def leap_year(y:int):
+    p1= y%4==0 # 被4整除是闰
+    p2= y%100 == 0 # 被100整除不是闰
+    p3= y%400 ==0 # 是闰
+    if p3 or (p1 & (not p2)) :
+        return 1
+    return 0
